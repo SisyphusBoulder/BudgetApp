@@ -7,7 +7,7 @@ Project Structure
 The project follows a Clean Architecture like structure; the main application can be run from the Main class in the app package. Prioritisation has been given to the architecture and design of the project; while the application is simple in scope, and does not require in depth business logic, good architecture is at the forefront of any successful project no matter how large or small.
 
 As such we use the following structure:
-
+```
 app <--- The UI layer that the user interacts with
  |
  |
@@ -21,7 +21,7 @@ repository <-- data repository that provides access to the data. In our case, we
  |
  |
 domain <-- the domain objects definitions, provides public facing getter methods to interact with the members but otherwise properly encapsulates them privately.
-
+```
 Valiation also plays it's part between the app and api layers but is not itself a separate layer of data flow. Test classes have also been created for each layer, though mocking has not been implemented throughout.
 
 We achieve dependency inversion through a dependency container, allowing us to inject concrete implementations for abstract members into each layer as required. Therefore no module depends on lower level module, but rather both depend on interfaces, which removes the strong coupling and allows for much more flexibility.
